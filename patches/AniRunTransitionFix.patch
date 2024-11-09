@@ -1,0 +1,14 @@
+// Author: Patrix and Fawkes
+// Source: https://discord.com/channels/989316194148433950/1178640076159332393/1304481629217230990
+
+#engine [G1]
+  #patch [AniRunTransitionFix]
+    HEX @0x0062DE8C = '90 90 90 90'
+  #/patch
+#/engine
+
+#engine [G2A]
+  #patch [AniRunTransitionFix]
+    HEX @0x006B762C = '90 90 90 90'
+  #/patch
+#/engine
