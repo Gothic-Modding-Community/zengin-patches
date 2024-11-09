@@ -9,5 +9,11 @@ Repository with various patches for ZenGin, a game engine used in Gothic 1 and 2
 ## Contributing
 If you have a patch you would like to submit, please create a pull request with the patch file in the `patches` directory. Make sure to include a description of the patch and the bug it fixes.
 
+## Other Resources
+Gothic patches can be also found in the following repositories:
+
+- [UnresolvedExternal/Gothic-Patches](https://github.com/UnresolvedExternal/Gothic-Patches)
+- [VaanaCZ/gothic-engine-patches](https://github.com/VaanaCZ/gothic-engine-patches)
+
 ## Credits
 Special thanks to [Fawkes](https://github.com/Fawkes-dev) for the idea of creating a repository for ZenGin patches.
