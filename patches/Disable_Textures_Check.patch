@@ -1,0 +1,9 @@
+// Author: Unknown
+// Source: https://discord.com/channels/989316194148433950/990576276387532810/1110943573341384704
+
+
+#engine [G2A]
+    #patch [Disable_Textures_Check]
+        HEX @0x0057771F = 'E9 EA 00 00 00 90'
+    #/patch
+#/engine

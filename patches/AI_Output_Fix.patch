@@ -1,0 +1,9 @@
+// Author: Boguś
+// Source: https://discord.com/channels/989316194148433950/989318564626456626/1085287887697883137
+
+
+#engine [G2A]
+    #patch [Fix Ai_Output]
+      memset(0x006EA109,'90',8)
+    #/patch
+#/engine
