@@ -1,0 +1,26 @@
+// Author: Gratt
+// Source: https://discord.com/channels/989316194148433950/1178640076159332393/1304582423752736811
+
+#engine [G1, G1A, G2, G2A]
+    #patch [zFootPosFix]
+        // engine specific
+        INT text_oCAnictrl_Human_GetFootPos_jnz_return_2 = ZenDef(0x00628B0F, 0x0064DD34, 0x006552EF, 0x006B1C7F)
+        INT text_oCAnictrl_Human_GetFootPos_jp_return_2 = ZenDef(0x00628B24, 0x0064DD49, 0x00655304, 0x006B1C94)
+        INT text_oCAnictrl_Human_GetFootPos_return_1 = text_oCAnictrl_Human_GetFootPos_jp_return_2 + 6
+        INT text_oCAnictrl_Human_GetFootPos_return_2 = text_oCAnictrl_Human_GetFootPos_jnz_return_2 + 6 + INT @(text_oCAnictrl_Human_GetFootPos_jnz_return_2 + 2)
+        // end of engine specific
+        
+        IF ZenDef(1, 2, 3, 4) == 2
+            HEX @(text_oCAnictrl_Human_GetFootPos_jp_return_2 - 1) = '05'
+        END
+        
+        #assembler [text_oCAnictrl_Human_GetFootPos_jnz_return_2]
+            jz $text_oCAnictrl_Human_GetFootPos_return_1
+        #/assembler
+        
+        #assembler [text_oCAnictrl_Human_GetFootPos_jp_return_2]
+            jnp $text_oCAnictrl_Human_GetFootPos_return_1
+            jmp $text_oCAnictrl_Human_GetFootPos_return_2
+        #/assembler
+    #/patch
+#/engine

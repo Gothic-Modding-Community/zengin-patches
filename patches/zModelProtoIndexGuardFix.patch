@@ -1,0 +1,19 @@
+// Author: TopLayer
+// Source: https://discord.com/channels/989316194148433950/989333514543587339/1289852040331137024
+
+#engine [G2A]
+	#patch [zModelProtoIndexGuardFix]
+		// engine specific
+		// end of engine specific
+		
+		#assembler [0x0058FB5B]
+			orgcode
+			sub edx, 8
+			push ecx
+			lea ecx, [ecx+ecx*2]
+			shl ecx, 2
+			mov edx, [ecx+edx+8]
+			pop ecx
+		#/assembler
+	#/patch
+#/engine

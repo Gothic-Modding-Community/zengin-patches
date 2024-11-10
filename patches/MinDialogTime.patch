@@ -1,0 +1,19 @@
+// Author: Gratt
+// Source: https://discord.com/channels/989316194148433950/989333514543587339/1087485155083554966
+
+#engine [G2A]
+    #patch [Set a minimal dialog time]
+        float minimalTime = 5000.0
+        #assembler [0x004F63AE]
+            movss   xmm0, dword ptr[$minimalTime]
+            comiss  xmm0, dword ptr[ecx+8]
+            jbe     setOrigin
+            fld     dword ptr[$minimalTime]
+            jmp     return
+        setOrigin:
+            fld     dword ptr[ecx+8]
+        return:
+            orgcode +1
+        #/assembler
+    #/patch
+#/engine
